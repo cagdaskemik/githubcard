@@ -179,7 +179,7 @@ template.innerHTML = `
     <div class="card"></div>
 `;
 
-class GithubCard extends HTMLElement {
+class GithubProfile extends HTMLElement {
   constructor() {
     super();
     this._shadowRoot = this.attachShadow({ mode: "open" });
@@ -318,5 +318,5 @@ class GithubCard extends HTMLElement {
   }
 }
 
-customElements.define("githubcard", GithubCard);
-module.exports = GithubCard;  
+customElements.define("github-profile", GithubProfile);
+module.exports = GithubProfile;  
