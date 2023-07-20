@@ -318,5 +318,5 @@ class GithubCard extends HTMLElement {
   }
 }
 
-customElements.define("github-card", GithubCard);
+customElements.define("githubcard", GithubCard);
 module.exports = GithubCard;  
