@@ -187,17 +187,17 @@ class GithubProfile extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ["data-theme", "data-color", "data-color-secondary"];
-  }
+    return ["theme", "color", "color-secondary"];
+    }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    if (name === "data-theme" && oldValue !== newValue && newValue !== "") {
+    if (name === "theme" && oldValue !== newValue && newValue !== "") {
       this.setTheme(newValue);
     }
-    if (name === "data-color" && oldValue !== newValue && newValue !== "") {
+    if (name === "color" && oldValue !== newValue && newValue !== "") {
       this.setColor(newValue);
     }
-    if (name === "data-color-secondary" && oldValue !== newValue && newValue !== "") {
+    if (name === "color-secondary" && oldValue !== newValue && newValue !== "") {
       this.setSecondaryColor(newValue);
     }
   }
@@ -215,21 +215,21 @@ class GithubProfile extends HTMLElement {
     // Rest of the code inside connectedCallback
     // ...
 
-    await this.fetchData(this.getAttribute("data-user")).then((data) => {
+    await this.fetchData(this.getAttribute("user")).then((data) => {
       this.createCard(data);
     });
 
-    const theme = this.getAttribute("data-theme");
+    const theme = this.getAttribute("theme");
     if (theme) {
       this.setTheme(theme);
     }
 
-    const color = this.getAttribute("data-color");
+    const color = this.getAttribute("color");
     if (color) {
       this.setColor(color);
     }
 
-    const secondaryColor = this.getAttribute("data-color-secondary");
+    const secondaryColor = this.getAttribute("color-secondary");
     if (secondaryColor) {
       this.setSecondaryColor(secondaryColor);
     }
@@ -265,7 +265,7 @@ class GithubProfile extends HTMLElement {
   }
 
   getSecondaryColor() {
-    return this.getAttribute("data-color-secondary") || "#ffffff"; // Default color if not set
+    return this.getAttribute("color-secondary") || "#ffffff"; // Default color if not set
   }
 
   createCard(data) {
@@ -306,12 +306,12 @@ class GithubProfile extends HTMLElement {
             </div>
           </div>
         </div>`;
-    const theme = this.getAttribute("data-theme");
+    const theme = this.getAttribute("theme");
     if (theme) {
       this.setTheme(theme);
     }
 
-    const color = this.getAttribute("data-color");
+    const color = this.getAttribute("color");
     if (color) {
       this.setColor(color);
     }
