@@ -18,7 +18,7 @@ npm install @cagdaskemik/githubcard
 
 import '@cagdaskemik/githubcard'
 
-    <github-profile data-id="10533487"></github-profile>
+    <github-profile user="cagdaskemik" color="#fa5132" color-secondary="white"></github-profile>
 
 ```
 
