@@ -323,5 +323,5 @@ class GithubProfile extends HTMLElement {
 
 if (typeof window !== 'undefined' && !customElements.get('github-profile')) {
   customElements.define('github-profile', GithubProfile);
-}                                                                                                                                                                      
+}
 //module.exports = GithubProfile;  
