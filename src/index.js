@@ -170,14 +170,17 @@ function formatNumbers(num) {
   return newNum;
 }
 
-// Create a template element and set its innerHTML
-const template = document.createElement("template");
-template.innerHTML = `
-    <style>
-        ${widgetStyle}
-    </style>
-    <div class="card"></div>
-`;
+let template;
+
+if (typeof document !== "undefined") {
+  template = document.createElement("template");
+  template.innerHTML = `
+      <style>
+          ${widgetStyle}
+      </style>
+      <div class="card"></div>
+  `;
+}
 
 class GithubProfile extends HTMLElement {
   constructor() {
@@ -318,7 +321,7 @@ class GithubProfile extends HTMLElement {
   }
 }
 
-if (!customElements.get("github-profile")) {
-  customElements.define("github-profile", GithubProfile);
-}
+if (typeof window !== 'undefined' && !customElements.get('github-profile')) {
+  customElements.define('github-profile', GithubProfile);
+}                                                                                                                                                                      
 //module.exports = GithubProfile;  
