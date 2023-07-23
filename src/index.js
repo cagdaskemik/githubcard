@@ -181,7 +181,7 @@ if (typeof document !== "undefined") {
       <div class="card"></div>
   `;
 }
-
+if (typeof window !== 'undefined') {
 class GithubProfile extends HTMLElement {
   constructor() {
     super();
@@ -214,9 +214,6 @@ class GithubProfile extends HTMLElement {
   }
 
   async connectedCallback() {
-
-    // Rest of the code inside connectedCallback
-    // ...
 
     await this.fetchData(this.getAttribute("user")).then((data) => {
       this.createCard(data);
@@ -321,7 +318,8 @@ class GithubProfile extends HTMLElement {
   }
 }
 
-if (typeof window !== 'undefined' && !customElements.get('github-profile')) {
+if (!customElements.get('github-profile')) {
   customElements.define('github-profile', GithubProfile);
 }
 //module.exports = GithubProfile;  
+}
