@@ -22,6 +22,7 @@ import '@cagdaskemik/githubcard'
     <github-profile user="cagdaskemik" color="#fa5132" color-secondary="white"></github-profile>
 
 ```
+![image](https://github.com/cagdaskemik/githubcard/assets/108903103/65586ce5-5254-41e1-a838-1b64729efcbe)
 
 ## License
 
